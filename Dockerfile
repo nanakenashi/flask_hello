@@ -8,5 +8,5 @@ ADD requirements.txt $project_dir
 WORKDIR $project_dir
 RUN pip install -r requirements.txt
 
-RUN apk update
-RUN apk add zsh vim tmux git tig
+ENV FLASK_APP hello.py
+CMD flask run -h 0.0.0.0 -p 5000
